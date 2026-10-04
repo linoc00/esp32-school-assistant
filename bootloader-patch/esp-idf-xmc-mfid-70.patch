@@ -1,0 +1,5 @@
+--- a/components/bootloader_support/bootloader_flash/src/bootloader_flash.c
++++ b/components/bootloader_support/bootloader_flash/src/bootloader_flash.c
+@@
+-    } else if (mfid == 0x41) {
++    } else if (mfid == 0x41 || mfid == 0x70) {

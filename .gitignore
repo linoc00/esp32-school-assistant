@@ -1,0 +1,23 @@
+# Configurazioni e credenziali locali
+config.json
+firmware/assistente_esp32/wifi_secrets.h
+firmware/assistente_esp32/device_config.h
+
+# Database e file temporanei SQLite
+data/*.db
+data/*.db-shm
+data/*.db-wal
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Compilazioni e strumenti locali
+build/
+.espressif-idf/
+.serial-tools/
+
+# Audio, firmware binari e file di sistema
+*.wav
+*.bin
+.DS_Store

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Punto informazioni vocale locale dell'istituto scolastico">
+  <title>Assistente dell'istituto</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b2837'/%3E%3Cpath d='M15 24 32 15l17 9-17 9-17-9Zm7 7v11c7 5 13 5 20 0V31' fill='none' stroke='%23f5c451' stroke-width='5' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark" aria-hidden="true">IS</div>
+    <div>
+      <p class="eyebrow">Punto informazioni</p>
+      <h1 id="school-name">Istituto scolastico</h1>
+    </div>
+    <button class="status-button" id="status-button" type="button" aria-expanded="false" aria-controls="service-panel">
+      <span class="status-dot" id="status-dot"></span>
+      <span id="status-label">Controllo sistema</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="assistant-panel" aria-labelledby="assistant-title">
+      <div class="prompt-copy">
+        <p class="section-label">Assistente locale</p>
+        <h2 id="assistant-title">Dove vuoi andare?</h2>
+        <p>Premi il pulsante, fai la domanda e rilascialo quando hai finito.</p>
+      </div>
+
+      <div class="voice-area">
+        <button class="talk-button" id="talk-button" type="button" aria-label="Premi per parlare">
+          <span class="mic-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" role="img"><path d="M16 4a5 5 0 0 0-5 5v7a5 5 0 0 0 10 0V9a5 5 0 0 0-5-5Zm-9 12a9 9 0 0 0 18 0M16 25v4m-5 0h10"/></svg>
+          </span>
+          <span class="talk-label" id="talk-label">Premi per parlare</span>
+        </button>
+        <p class="privacy-note"><span aria-hidden="true">●</span> La conversazione rimane nella rete della scuola</p>
+      </div>
+
+      <div class="answer-card" id="answer-card" aria-live="polite">
+        <div class="answer-icon" aria-hidden="true">i</div>
+        <div>
+          <p class="answer-kicker" id="answer-kicker">Pronto ad aiutarti</p>
+          <p class="answer-text" id="answer-text">Puoi chiedere, ad esempio: “Dove si trova il laboratorio di robotica?”</p>
+          <p class="location-meta" id="location-meta" hidden></p>
+          <div class="clarification-options" id="clarification-options" hidden></div>
+        </div>
+      </div>
+
+      <form class="text-query" id="query-form">
+        <label for="query-input">Oppure scrivi la domanda</label>
+        <div class="input-row">
+          <input id="query-input" name="query" type="text" autocomplete="off" placeholder="Dove si trova la segreteria?" maxlength="300">
+          <button type="submit">Chiedi</button>
+        </div>
+      </form>
+
+      <label class="accessible-option">
+        <input id="accessible-toggle" type="checkbox">
+        <span class="custom-check" aria-hidden="true"></span>
+        <span><strong>Indicazioni accessibili</strong><small>Evita scale e segnala ascensori o percorsi senza gradini.</small></span>
+      </label>
+    </section>
+
+    <aside class="directory-panel" aria-labelledby="directory-title">
+      <div class="directory-heading">
+        <div>
+          <p class="section-label">Destinazioni</p>
+          <h2 id="directory-title">Luoghi frequenti</h2>
+        </div>
+        <span class="count" id="location-count">—</span>
+      </div>
+      <div class="location-list" id="location-list" aria-live="polite">
+        <div class="location-skeleton"></div>
+        <div class="location-skeleton"></div>
+        <div class="location-skeleton"></div>
+      </div>
+    </aside>
+  </main>
+
+  <section class="service-panel" id="service-panel" hidden>
+    <div class="service-panel-heading">
+      <div>
+        <p class="section-label">Diagnostica locale</p>
+        <h2>Stato dei servizi</h2>
+      </div>
+      <button id="close-services" type="button" aria-label="Chiudi pannello">×</button>
+    </div>
+    <div class="services" id="services"></div>
+    <p class="service-help">La ricerca scritta resta disponibile anche se i servizi vocali non sono ancora collegati.</p>
+  </section>
+
+  <footer>
+    <span>Assistente locale</span>
+    <span>Nessun dato inviato su Internet</span>
+  </footer>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "school_name": "Istituto scolastico",
+  "default_origin": "Ingresso principale",
+  "llama_url": "http://127.0.0.1:8080",
+  "llama_model": "openbmb/MiniCPM5-2B-GGUF:Q4_K_M",
+  "llama_api_key": "school-assistant-local-change-me",
+  "embeddings_url": "http://127.0.0.1:8082/v1/embeddings",
+  "embeddings_model": "Qwen/Qwen3-Embedding-0.6B-GGUF:Q8_0",
+  "embeddings_api_key": "school-assistant-embeddings-local",
+  "use_semantic_search": true,
+  "whisper_url": "http://127.0.0.1:8081/inference",
+  "piper_url": "http://127.0.0.1:5000/synthesize",
+  "use_llama_for_ambiguity": true,
+  "browser_tts_fallback": true,
+  "request_timeout_seconds": 25,
+  "max_audio_megabytes": 12
+}
